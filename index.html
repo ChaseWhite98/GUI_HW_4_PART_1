@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--
+    Name:     Chase White (01735254)
+    Email:    chgase_white@student.uml.edu
+    File:     index.html
+    Created:  06/22/22
+    Desc:     Multiplication table created using JS, JQUERY validaiton plugin, styled with Bootstrap. Pulls start and end for column and row, validates form entries in realtime with error messages, generates table, and displays it neatly next to the form. Handles ranges -50 to 50
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Multiplication Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="js/jquery-1.11.0.js"></script>
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <!-- header section -->
+    <div class="container">
+        <div class="row mt-4 p-5 bg-primary text-white rounded" id="head_section">
+                <header class="col text-center">
+                    <h1 class="display-4">Multiplication Table</h1>
+                </header>
+        </div>
+    </div>
+    
+    <!-- entry form section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                <fieldset class="border">
+                    <legend>Enter Table Ranges</legend>
+                    <form class="form-horizontal" id="entry_form">
+                        <div class="form-group">
+                            <label class="control-label" for="mincol">Minimum Column Value</label>
+                            <input type="number" class="form-control" id="mincol" placeholder="Range [ -50 to 50 ] ..." name="mincol">
+                        </div>
+                        <div class="form-group">
+                            <label for="maxcol">Maximum Column Value</label>
+                            <input type="number" class="form-control" id="maxcol" placeholder="Range [ -50 to 50 ] ..." name="maxcol">
+                        </div>
+                        <div class="form-group">
+                            <label for="minrow">Minimum Row Value</label>
+                            <input type="number" class="form-control" id="minrow" placeholder="Range [ -50 to 50 ] ..." name="minrow">
+                        </div>
+                        <div class="form-group">
+                            <label for="maxrow">Maximum Row Value</label>
+                            <input type="number" class="form-control" id="maxrow" placeholder="Range [ -50 to 50 ] ..." name="maxrow">
+                        </div>
+                            <!-- once clicked, this button verifies the form and generates the table in JS -->
+                            <input type="submit" class="p-3 btn btn-primary col-sm-12" value="Generate Table" onclick="return validate_form()"></button>
+                    </form>
+                        
+                </fieldset>
+            </div>
+            <!-- spot to be filled by JS function w/ generated table -->
+            <div class="col-sm-9" id="multi_table"></div>
+        </div>
+        <!-- footer section for CR -->
+        <div class="row">
+            <footer class="col">
+                <h6>Copyright &copy; 2022 Chase White</h5>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
